@@ -147,12 +147,12 @@ detailed here (must be matching version). As such, there can be multiple inner
 WOM mnemonics using inner-square brackets until the desired level of reduction 
 is made.
 
-The final result of the WOM can therefore be `[0xdc435f01e]` or `[The speaker 
-during the exam regaled the people of a tale]`.
+The final result of the WOM can therefore be `[0xdc435f01e]` or `[The speaker
+during the exam, next to the town, regaled the people of a tale]`.
 ```
-dc      43   5f   01           e0
-220     67   95   1            224
-speaker exam town people/chair tale
+dc      43   5f   01     e0
+220     67   95   1      224
+speaker exam town people tale
 ```
 
 ### 4. Version Tag
@@ -169,8 +169,8 @@ The end result of the address `2134:0:7fa3::ffff:7777` to mnemonic can be:
 > v0.1 The boy stood at the edge, his moment of glory arriving as an actor. The 
 > people in the theatre watched in awe, their phones capturing the production. 
 > Knowing his speed and talent came from leadership and dedication to the 
-> outcome, which he celebrated later with a tasty soup. [The speaker 
-> during the exam regaled the people of a tale].
+> outcome, which he celebrated later with a tasty soup. [The speaker
+during the exam, next to the town, regaled the people of a tale].
 
 # Remarks
 
