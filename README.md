@@ -158,12 +158,11 @@ version number. For example `v1.0`.
 ## Completed Example
 
 The end result of the address `2134:0:7fa3::ffff:7777` to mnemonic can be:
-> v1.0 The **boy** stood at the **edge**, his **moment** of glory arriving as
-> an **actor**. The **people** in the theatre watched in awe, their 
-> **phones** capturing the production. Knowing his **speed** and talent came 
-> from **leadership** and dedication to the **outcome**, which he celebrated 
-> later with a tasty **soup**. [The speaker during the exam had a sense of form 
-> and control].
+> v0.1 The boy stood at the edge, his moment of glory arriving as an actor. The 
+> people in the theatre watched in awe, their phones capturing the production. 
+> Knowing his speed and talent came from leadership and dedication to the 
+> outcome, which he celebrated later with a tasty soup. [The speaker during the 
+> exam had a sense of form and control].
 
 # Remarks
 
