@@ -1,5 +1,5 @@
-'hood
-a
+a'hood | REMOVED__THE_WORD_SINGLE_QUOTE_HOOD_IS_REMOVED
+witnesses | REMOVED__THE_WORD_A_IS_REMOVED
 a'man
 a-horizon
 a-line

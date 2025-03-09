@@ -67,7 +67,7 @@ nouns from the included reference list (almost):
 ```
 2134          :  0     : 7fa3         :: ffff : 7777
  ↓            :  ↓     :  ↓           ::  ↓   :   ↓
-continence    : 'hood  : scorpionfish :: ???  : razorblade
+continence    : a'hood : scorpionfish :: ???  : razorblade
 ...
 ```
 
