@@ -80,19 +80,19 @@ split into two 2-digit hexadecimals ($2^8$ = 256) or remain as the original
 
 Following on from the above example, this now gives the options:
 ```
-2134                : 0            : 7fa3           :: ffff      : 7777
-↓                   : ↓            : ↓              :: ↓         : ↓
-continence          : 'hood        : scorpionfish   :: ???       : razorblade
-21          34      : 0      0     : 7f       a3    :: ff    ff  : 77     77
-↓           ↓       : ↓      ↓     : ↓        ↓     :: ↓     ↓   : ↓      ↓
-ability     thing   : people actor : moment   phone :: virus boy : soup   ...
-leadership  outcome : point  ...   : proposal ...   :: end       : speed
-level       ...     : ...          : ...            :: edge
+2134                : 0             : 7fa3           :: ffff      : 7777
+↓                   : ↓             : ↓              :: ↓         : ↓
+continence          : a'hood        : scorpionfish   :: ???       : razorblade
+21          34      :        0      : 7f       a3    :: ff    ff  : 77     77
+↓           ↓       :        ↓      : ↓        ↓     :: ↓     ↓   : ↓      ↓
+ability     thing   :        actor  : moment   phone :: virus boy : soup   ...
+leadership  outcome :        people : proposal ...   :: end       : speed
+level       ...     :        point  : ...            :: edge
 ...
 ```
 
 We can pick and chose a noun to represent each number, in whatever combination. 
-This can give us `leadership`, `outcome`, `people`, `actor`, `moment`, `phone`,
+This can give us `leadership`, `outcome`, `actor`, `moment`, `phone`,
 `edge`, `boy`, `soup`, `speed` - but this doesn't make a memorable or even 
 sensible prose when strung together, as _leadership outcome people actor moment 
 phone edge boy soup speed_ is complete gibberish! The next step will help solve
@@ -114,29 +114,29 @@ index position for each 2-digit hexadecimal:
 ```
 We now have the following:
 ```
-0:leadership 1:outcome 2:people 3:actor 4:moment 5:phone 12:edge 13:boy 14:soup 15:speed
+0:leadership 1:outcome 3:actor 4:moment 5:phone 12:edge 13:boy 14:soup 15:speed
 ```
 
-> Note that indexes `6`, `7`, `8`, `9`, `10`, and `11` are not present, as these 
-> were removed due to the IPv6 Address compacting step.
+> Note that indexes `2`, `6`, `7`, `8`, `9`, `10`, and `11` are not present, as 
+> these were removed due to the IPv6 Address compacting step.
 
 Now, let's re-order and add some other words to make something more 
 understandable:
 > The 13:**boy** stood at the 12:**edge**, his 4:**moment** of glory arriving as
-> an 3:**actor**. The 2:**people** in the theatre watched in awe, their 
-> 5:**phones** capturing the production. Knowing his 15:**speed** and talent came 
-> from 0:**leadership** and dedication to the 1:**outcome**, which he celebrated 
+> an 3:**actor**. Those in the theatre watched in awe, their 5:**phones** 
+> capturing the production. Knowing his 15:**speed** and talent came from 
+> 0:**leadership** and dedication to the 1:**outcome**, which he celebrated 
 > later with a tasty 14:**soup**.
 
-This results in a change to the ordering as 13, 12, 4, 3, 2, 5, 15, 0, 1, 14. We
+This results in a change to the ordering as 13, 12, 4, 3, 5, 15, 0, 1, 14. We
 need some way to represent this, which we achieve with the "Word Order Mark" 
 (WOM), as previously described. The ordering is represented as a hexadecimal:
 ```
-13 12 04 03 02 05 15 00 01 14
-↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓
-d  c  4  3  2  5  f  0  1  e
+13 12 04 03 05 15 00 01 14
+↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓
+d  c  4  3  5  f  0  1  e
 ```
-The WOM is therefore `0xdc4325f01e`. 
+The WOM is therefore `0xdc435f01e`. 
 
 The WOM is represented anywhere in the prose within square (`[` and `]`) 
 brackets, or if absent, means the ordering was not altered (i.e. same as
@@ -146,6 +146,13 @@ The WOM itself can be converted to a mnemonic using the same procedure as
 detailed here (must be matching version). As such, there can be multiple inner 
 WOM mnemonics using inner-square brackets until the desired level of reduction 
 is made.
+
+The final result of the WOM can therefore be `[0xdc435f01e]` or `[The speaker 
+during the exam regaled the people of a tale]`.
+
+dc      43   5f   01           e0
+220     67   95   1            224
+speaker exam town people/chair tale
 
 ### 4. Version Tag
 
@@ -161,8 +168,8 @@ The end result of the address `2134:0:7fa3::ffff:7777` to mnemonic can be:
 > v0.1 The boy stood at the edge, his moment of glory arriving as an actor. The 
 > people in the theatre watched in awe, their phones capturing the production. 
 > Knowing his speed and talent came from leadership and dedication to the 
-> outcome, which he celebrated later with a tasty soup. [The speaker during the 
-> exam had a sense of form and control].
+> outcome, which he celebrated later with a tasty soup. [The speaker 
+> during the exam regaled the people of a tale].
 
 # Remarks
 
