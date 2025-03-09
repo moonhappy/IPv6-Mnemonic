@@ -149,10 +149,11 @@ is made.
 
 The final result of the WOM can therefore be `[0xdc435f01e]` or `[The speaker 
 during the exam regaled the people of a tale]`.
-
+```
 dc      43   5f   01           e0
 220     67   95   1            224
 speaker exam town people/chair tale
+```
 
 ### 4. Version Tag
 
