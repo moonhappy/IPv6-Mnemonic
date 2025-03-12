@@ -11,4 +11,4 @@ plugins {
 }
 
 rootProject.name = "ipv6mnemonic"
-include("app", "lib")
+include("app", "utilities")

@@ -13,5 +13,5 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = "io.moonhappy.app.AppKt"
+    mainClass = "org.example.app.AppKt"
 }
