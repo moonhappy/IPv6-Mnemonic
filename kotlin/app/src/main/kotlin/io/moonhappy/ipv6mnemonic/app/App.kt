@@ -3,12 +3,44 @@
  */
 package io.moonhappy.ipv6mnemonic.app
 
-import io.moonhappy.ipv6mnemonic.StringUtils
+import com.github.ajalt.clikt.core.CliktCommand
+import com.github.ajalt.clikt.core.main
+import com.github.ajalt.clikt.parameters.arguments.argument
+import com.github.ajalt.clikt.parameters.arguments.help
+import com.github.ajalt.clikt.parameters.options.default
+import com.github.ajalt.clikt.parameters.options.help
+import com.github.ajalt.clikt.parameters.options.option
+import com.github.ajalt.clikt.parameters.types.boolean
+import io.moonhappy.ipv6mnemonic.Decode
+import kotlin.time.measureTime
 
-import org.apache.commons.text.WordUtils
+class IPv6MnemonicCommand : CliktCommand() {
+    private val mnemonic: String by argument().help("The IPv6 Mnemonic to decode to an IPv6 address")
+    private val timing: Boolean by option().boolean().default(false).help("Output timing detail")
 
-fun main() {
-    val tokens = StringUtils.split(MessageUtils.getMessage())
-    val result = StringUtils.join(tokens)
-    println(WordUtils.capitalize(result))
+    override fun run() {
+        // TODO: Check arguments are valid
+
+        var ipAddr = ""
+        if (timing) {
+            val timeTaken = measureTime {
+                ipAddr = decode(mnemonic)
+            }
+            println("\nTime taken: $timeTaken \n")
+        } else {
+            ipAddr = decode(mnemonic)
+        }
+
+        println(ipAddr)
+    }
+
+    private fun decode(input: String): String {
+        val ipAddr = Decode().decode(mnemonic)
+        // TODO: Convert ByteArray to IPv6 Address notation
+        return "TODO"
+    }
+}
+
+fun main(args: Array<String>) {
+    IPv6MnemonicCommand().main(args)
 }

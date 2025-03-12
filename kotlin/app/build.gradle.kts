@@ -8,6 +8,7 @@ plugins {
 
 dependencies {
     implementation("org.apache.commons:commons-text")
+    implementation("com.github.ajalt.clikt:clikt:5.0.1")
     implementation(project(":lib"))
 }
 
