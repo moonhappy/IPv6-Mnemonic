@@ -1,0 +1,12 @@
+language: haxe
+
+before_install:
+  - sudo apt-get update
+  - haxelib install hxcpp
+  # - haxelib install utest
+  # - haxelib install hxcpp-debug-server
+  # - haxelib install dox
+
+hxml:
+  - hxml/test-ci.hxml
+  # - hxml/gen-docs.hxml
