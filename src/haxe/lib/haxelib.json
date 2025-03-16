@@ -4,7 +4,7 @@
     "license": "MIT",
     "classPath": "src",
     "description": "Manage game objects using a theatre/stage like paradigm, using scene constructs.",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "releasenote": "update",
     "contributors": [
         "moonhappy"

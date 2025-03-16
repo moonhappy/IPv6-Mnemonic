@@ -9,7 +9,8 @@ class Decoder : IDecoder {
     private val nounsMap: Map<String, Int>;
 
     init {
-        // Load nouns word list into map to quick look-ups, rather than searching through the list
+        // Load nouns word list into map for quick look-ups, rather than 
+        // searching through the list
         val nounsListShort = Nouns().nounsShort()
         nounsMap = nounsListShort.mapIndexed { index, s -> s to index + 1  }.toMap()
     }
@@ -25,8 +26,9 @@ class Decoder : IDecoder {
         val tokens = mutableListOf<Token>()
         var position = 0
         inSequence.forEach {
-            val nounIndex = nounsMap[it.lowercase()] ?: return@forEach
-            tokens.addLast(Token(it.lowercase(), position, nounIndex, nounIndex % 256))
+            val word = it.lowercase();
+            val nounIndex = nounsMap[word] ?: return@forEach
+            tokens.addLast(Token(word, position, nounIndex, nounIndex % 256))
             position++
         }
         // TODO: Re-arrange via WOM and produce ByteArray
