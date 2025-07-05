@@ -1,12 +1,15 @@
 
+
+using IPv6Mnemonic.v0_1;
+
 namespace IPv6Mnemonic;
 
-class Decode 
+public class Decode 
 {
+    private Decoder _decoder = new Decoder();
 
-    List<byte> Decode(string input)
+    public List<byte> Do(string input)
     {
-
+        return _decoder.Decode(input);
     }
-
 }

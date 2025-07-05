@@ -9,7 +9,7 @@ class Decoder : IDecoder {
     private val nounsMap: Map<String, Int>;
 
     init {
-        // Load nouns word list into map for quick look-ups, rather than 
+        // Load nouns word list into map for quick look-ups, rather than
         // searching through the list
         val nounsListShort = Nouns().nounsShort()
         nounsMap = nounsListShort.mapIndexed { index, s -> s to index + 1  }.toMap()
