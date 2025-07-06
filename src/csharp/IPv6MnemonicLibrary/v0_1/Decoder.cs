@@ -8,7 +8,7 @@ internal struct Token
     internal string Noun;
     internal int Position;
     internal int Index;
-    internal int Value;
+    internal byte Value;
 }
 
 class Decoder : IDecoder
@@ -30,7 +30,7 @@ class Decoder : IDecoder
         return "0.1.0";
     }
 
-    public List<byte> Decode(string input)
+    public byte[] Decode(string input)
     {
         // TODO: Add param checks
         // Check each word to a corresponding noun in the list.
@@ -45,10 +45,24 @@ class Decoder : IDecoder
             if (!_nounsMap.ContainsKey(word))
                 continue;
             var nounIndex = _nounsMap[word];
-            tokens.AddLast(new Token { Noun = word, Position = position, Index = nounIndex, Value = (nounIndex + 1) % 256 });
+            tokens.AddLast(new Token { Noun = word, Position = position, Index = nounIndex, Value = (byte)((nounIndex + 1) % 256) });
             position++;
         }
         // TODO: Re-arrange via WOM and produce ByteArray
-        return new List<byte>();
+        return Complete(tokens);
+    }
+
+    private byte[] Complete(LinkedList<Token> tokens)
+    {
+        var resultArray = new byte[tokens.Count];
+        foreach (Token token in tokens)
+        {
+            if (token.Position < 0 || token.Position > resultArray.Length)
+            {
+                throw new Exception("Position out of index");
+            }
+            resultArray[token.Position] = (byte)token.Value;
+        }
+        return resultArray;
     }
 }

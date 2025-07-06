@@ -8,7 +8,7 @@ public class Decode
 {
     private Decoder _decoder = new Decoder();
 
-    public List<byte> Do(string input)
+    public byte[] Do(string input)
     {
         return _decoder.Decode(input);
     }
