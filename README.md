@@ -6,6 +6,14 @@
 Help make IPv6 Addresses 🤖 more human-friendly 🕺🏻
 </p>
 
+> **NOTE:** This project is a work in progress and is very much in the "make it work"
+> phase rather than the "make it right" and especially not "make it fast" phase
+> of implementation.
+> It has also become clear that an IPv6 address conversion library is needed for 
+> the conversion between a raw byte-array and 
+> [Section 2.2 of RFC 4291](https://datatracker.ietf.org/doc/html/rfc4291#section-2.2)
+> text representation of an IPv6 address.
+
 **IPv6 Mnemonic** is an alternative way to represent [IPv6 Addresses](https://en.wikipedia.org/wiki/IPv6_address#Representation) 
 by representing the address as written prose (sentence, paragraph, poem).
 
@@ -35,6 +43,11 @@ sequence of zeros as two colons `::`. Continuing with the previous example:
 ```
 2134:0:7fa3::1986:7777
 ```
+
+This is outlined in [Section 2.2 of RFC 4291](https://datatracker.ietf.org/doc/html/rfc4291#section-2.2)
+for textual representation of IPv6 address. [RFC 5952](https://datatracker.ietf.org/doc/html/rfc5952)
+lays down rules to enforce a singular acceptable way to textually represent IPv6
+addresses, rather than the various acceptable options in RFC 4291.
 
 ## IPv6 Mnemonic Goal
 
